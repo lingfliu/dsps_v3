@@ -1,0 +1,1 @@
+A copy of Dialog DSPS ver 3.4.0 source code for android

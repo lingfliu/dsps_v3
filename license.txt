@@ -1,0 +1,45 @@
+LICENSES
+
+NAME                            LICENSE FILE PATH                                               LICENSE TYPE                    COPYRIGHT                   COMMENTS
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DSPS Android Application        dsps_app_android/dialog-license.txt                             Dialog proprietary              Dialog Semiconductor        Licensed under the relevant Dialog SLA
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Apache Cordova                  dsps_app_android/app/src/main/assets/www/cordova.js             Apache License Version 2.0      The Apache Software         https://cordova.apache.org
+                                dsps_app_android/app/src/main/assets/www/cordova-js-src/                                        Foundation                  https://github.com/apache/cordova-android
+                                dsps_app_android/app/src/main/java/org/apache/cordova/
+                                dsps_app_android/CordovaLib/
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+cordova-plugin-dialogs          dsps_app_android/app/src/main/...                               Apache License Version 2.0      The Apache Software         https://github.com/apache/cordova-plugin-dialogs
+                                    .../assets/www/plugins/cordova-plugin-dialogs/                                              Foundation
+                                    .../java/org/apache/cordova/dialogs/
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+cordova-plugin-file             dsps_app_android/app/src/main/...                               Apache License Version 2.0      The Apache Software         https://github.com/apache/cordova-plugin-file
+                                    .../assets/www/plugins/cordova-plugin-file/                                                 Foundation
+                                    .../java/org/apache/cordova/file/
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+jQuery                          dsps_app_android/app/src/main/...                               MIT License                     jQuery Foundation, Inc.     https://jquery.org
+                                    .../assets/www/js/jquery.min.js
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+jQuery Mobile                   dsps_app_android/app/src/main/...                               MIT License                     jQuery Foundation, Inc.     https://jquerymobile.com
+                                    .../assets/www/js/jquery.mobile.min.js
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Slideout.js                     dsps_app_android/app/src/main/assets/www/js/slideout.js         MIT License                     Mango                       https://slideout.js.org
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Underscore.js                   dsps_app_android/app/src/main/assets/www/plugins/...            MIT License                     Jeremy Ashkenas             http://underscorejs.org
+                                    .../org.bcsphere.bluetooth/www/org.underscorejs.underscore/
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+BC.js                           dsps_app_android/app/src/main/assets/www/plugins/...            Apache License Version 2.0      JUMA Technology             https://github.com/bcsphere/bluetooth
+                                    .../org.bcsphere.bluetooth/www/org.bcsphere/                                                Dialog Semiconductor        Original code by JUMA Technology
+                                    .../org.bcsphere.bluetooth/www/org.bcsphere.bluetooth/
+                                    .../org.bcsphere.cordova.utilities/
+                               dsps_app_android/app/src/main/java/org/bcsphere/
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+This software includes both proprietary and open source components. The proprietary components may only be used after execution of the
+relevant Dialog Semiconductor Licensing Agreement. If you have not executed such an agreement you are not authorised to use this software.
+All open source components constitute a separate delivery and are licensed according to the applicable terms of their respective open source
+licenses. All open source software is delivered “AS IS” with no warranties. While Dialog Semiconductor seeks to provide complete and
+accurate licensing information with regard to each open source package, Dialog Semiconductor does not warrant or represent that the
+licensing information is complete or error-free. Certain open source licenses may require that source code is made available under
+certain conditions. Please contact bluetooth.support@diasemi.com for any source code requests, as well as for any licensing inquiries
+with respect to the proprietary components.
