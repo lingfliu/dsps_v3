@@ -1,0 +1,234 @@
+<html>
+<meta charset="utf-8">
+<style>
+    body {
+        font-family: "Myriad Pro", sans-serif;
+        color: #333;
+    }
+    a { color: #00accd; }
+    ol { counter-reset: item; margin: 0; padding: 0; }
+    li { display: block }
+    li:before {
+        float: left;
+        content: "1." counters(item, ".") " ";
+        counter-increment: item;
+        font-weight: bold;
+        margin-right: 0.5em;
+    }
+    .bold {
+        font-weight: bold;
+    }
+    .grayColour {
+        color: rgb(155,155,155);
+    }
+</style>
+<script>
+    window.onload = function() {
+        var elements = document.getElementsByTagName('a');
+        for(var i = 0, len = elements.length; i < len; i++) {
+            elements[i].onclick = function (e) {
+                parent.openExternalURL(this.href);
+                return false;
+            };
+        }
+    }
+</script>
+<body>
+
+<center>
+    <p><img src='img/logo-dialog-blue.png' style="200px;"/></p>
+    <p class="grayColour">Copyright &copy; Dialog Semiconductor 2016 All rights reserved</p>
+</center>
+
+<hr class="grayColour" style="width:100%;"/>
+
+<p class="bold">By using this application for smartphones (referred to as "Application") you may
+access and/or download certain product related information such as data sheets, application
+notes, user manuals, product selection guides etc. (referred to (as "Product Information").
+Dialog Semiconductor offers the Application and all such Product Information subject to the
+following terms and restrictions.</p>
+
+<ol>
+    <li>
+        <p>The Product Information or any part thereof is provided “as is“. Dialog makes no
+        warranties or representations with regard to Product Information or any part thereof of
+        any kind, whether express or implied, including without limitation, warranties or
+        representations of merchantability, fitness for a particular purpose, title and
+        non-infringement of any third party intellectual property right. No liability of any
+        kind shall be assumed by Dialog Semiconductor with respect to Product Information or any
+        use made by you thereof, nor shall Dialog Semiconductor indemnify you against or be
+        liable for any third party claims with respect to such information or any use
+        thereof.</p>
+    </li>
+    <li>
+        <p>IN NO EVENT SHALL DIALOG SEMICONDUCTOR OR ITS SUPPLIERS BE LIABLE FOR ANY DIRECT AND/OR
+        INDIRECT, INCIDENTIAL, CONSEQUENTIAL, SPECIAL OR PUNITIVE DAMAGES INCLUDING BUT NOT
+        LIMITED TO, DAMAGES RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
+        CONTRACT OR TORT OR OTHER THEORY OF LIABILITY RESULTING FROM USE OF THE APPLICATION, OR
+        SERVICES OR PRODUCT INFORMATION REGARDLESS OF WHETHER DIALOG OR AN AUTHORIZED
+        REPRESENTATIVE OF DIALOG HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+    </li>
+    <li>
+        <p>This Application may provide access to content contained on the company website.
+        As such, use of this service and all use of Dialog Semiconductor products, software and
+        applications referred to in this service are subject to Dialog Semiconductor's
+        <a href="https://www.dialog-semiconductor.com/legal-notices">Legal Notices</a>
+        and <a href="https://www.dialog-semiconductor.com/privacy-policy">Privacy Policy</a>,
+        available on the company website (<a href="https://www.dialog-semiconductor.com">www.dialog-semiconductor.com</a>).</p>
+    </li>
+    <li>
+        <p>When you use this Application or the services contained therein, you may be using the
+        services of one or more third parties, such as a wireless carrier or mobile platform
+        providers (referred to as "Third Party Services") and you acknowledge that your use of
+        those Third Party Services may be subject to separate terms of use of such third
+        parties. Any fees associated with the use of such Third Party Services are solely your
+        responsibility.</p>
+    </li>
+    <li>
+        <p>Dialog does not guarantee, represent or warrant that your use of the Application or the
+        services contained therein will be uninterrupted or error-free, and you agree that from
+        time to time Dialog Semiconductor may remove or cancel the service at any time, without
+        notice to you.</p>
+    </li>
+    <li>
+        <p>This Agreement shall be subject to the laws of England and Wales without reference to its
+        conflicts of law provisions. Exclusive place of jurisdiction shall be London, United
+        Kingdom, unless mandatory law provides otherwise.</p>
+    </li>
+    <li>
+        <p>Dialog and the Dialog logo are trademarks of Dialog Semiconductor plc or its subsidiaries.
+        All other product or service names are the property of their respective owners.
+        © Copyright 2016 Dialog Semiconductor. All rights reserved.</p>
+    </li>
+</ol>
+
+<hr class="grayColour" style="width:100%;"/>
+
+<h2><a href="https://cordova.apache.org">Apache Cordova</a></h2>
+<p>
+Copyright &copy; The Apache Software Foundation
+</p>
+    <p>Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at</p>
+    <p>http://www.apache.org/licenses/LICENSE-2.0</p>
+    <p>Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.</p>
+
+<br/>
+
+<h2><a href="https://github.com/apache/cordova-plugin-dialogs">cordova-plugin-dialogs</a></h2>
+<p>
+Copyright &copy; The Apache Software Foundation
+</p>
+    <p>Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at</p>
+    <p>http://www.apache.org/licenses/LICENSE-2.0</p>
+    <p>Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.</p>
+
+<br/>
+
+<h2><a href="https://github.com/apache/cordova-plugin-file">cordova-plugin-file</a></h2>
+<p>
+Copyright &copy; The Apache Software Foundation
+</p>
+    <p>Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at</p>
+    <p>http://www.apache.org/licenses/LICENSE-2.0</p>
+    <p>Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.</p>
+
+<br/>
+
+<h2><a href="https://jquery.org">jQuery</a></h2>
+<p>
+Copyright &copy; 2005, 2013 jQuery Foundation, Inc.
+</p>
+    <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+    documentation files (the "Software"), to deal in the Software without restriction, including without limitation
+    the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and
+    to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+    <p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+    <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
+    TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+    TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+
+<br/>
+
+<h2><a href="https://jquerymobile.com">jQuery Mobile</a></h2>
+<p>
+Copyright &copy; 2010, 2014 jQuery Foundation, Inc.
+</p>
+    <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+    documentation files (the "Software"), to deal in the Software without restriction, including without limitation
+    the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and
+    to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+    <p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+    <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
+    TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+    TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+
+<br/>
+
+<h2><a href="https://slideout.js.org/">Slideout.js</a></h2>
+<p>
+Copyright &copy; 2015 Mango
+</p>
+    <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+    documentation files (the "Software"), to deal in the Software without restriction, including without limitation
+    the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and
+    to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+    <p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+    <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
+    TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+    TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+
+<br/>
+
+<h2><a href="http://underscorejs.org">Underscore.js</a></h2>
+<p>
+Copyright &copy; 2009-2013 Jeremy Ashkenas
+</p>
+    <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+    documentation files (the "Software"), to deal in the Software without restriction, including without limitation
+    the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and
+    to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+    <p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+    <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
+    TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+    TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+
+<br/>
+
+<h2><a href="https://github.com/bcsphere/bluetooth">BC.js</a></h2>
+<p>
+Copyright &copy; 2013-2014 JUMA Technology
+</p>
+    <p>Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at</p>
+    <p>http://www.apache.org/licenses/LICENSE-2.0</p>
+    <p>Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.</p>
+
+</body>
+</html>

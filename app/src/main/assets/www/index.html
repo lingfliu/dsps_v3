@@ -1,0 +1,406 @@
+<!doctype html>
+<!--
+ *******************************************************************************
+ *
+ * Copyright (C) 2016 Dialog Semiconductor, unpublished work. This computer
+ * program includes Confidential, Proprietary Information and is a Trade
+ * Secret of Dialog Semiconductor. All use, disclosure, and/or reproduction
+ * is prohibited unless authorized in writing. All Rights Reserved.
+ *
+ * bluetooth.support@diasemi.com
+ *
+ *******************************************************************************
+-->
+<html lang="en" manifest="offline.manifest">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>DSPS</title>
+    <link rel="stylesheet" href="css/jquery.mobile.min.css">
+    <link rel="stylesheet" type="text/css" href="css/clear.css">
+    <link rel="stylesheet" type="text/css" href="css/materialdesign.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/search.css">
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.mobile.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/slideout.js"></script>
+    <script>
+        var slideout;
+        window.onload = function() {
+            document.getElementById('mainPage').style.visibility = "visible";
+            app.initialize();
+
+            document.getElementById('menu').style.visibility = "visible";
+            slideout = new Slideout({
+                'panel': document.getElementById('mainPage'),
+                'menu': document.getElementById('menu'),
+                'padding': 250,
+                'tolerance': 200,
+                'touch': false,
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div class="loader" id="loader" style="display: none;">
+        <div class="loader-background">
+            <div class="ios-loader">
+                <div class="bar bar1"></div>
+                <div class="bar bar2"></div>
+                <div class="bar bar3"></div>
+                <div class="bar bar4"></div>
+                <div class="bar bar5"></div>
+                <div class="bar bar6"></div>
+                <div class="bar bar7"></div>
+                <div class="bar bar8"></div>
+                <div class="bar bar9"></div>
+                <div class="bar bar10"></div>
+                <div class="bar bar11"></div>
+                <div class="bar bar12"></div>
+            </div>
+            <h1>Connecting...</h1>
+            <div class="cancelConnection">
+                <img src="img/exit.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <nav id="menu" style="visibility: hidden;">
+        <header class="menu-header">
+            <span class="menu-header-title">DSPS</span>
+            <span class="menu-header-description">Dialog Semiconductor</span>
+        </header>
+        <section class="menu-section">
+            <ul class="menu-section-list">
+                <li data-id="console-tab" class="selectedLi material-icons-before code">
+                    <a href="#">Console</a>
+                </li>
+                <li data-id="rx-tab" class="material-icons-before import_export">
+                    <a href="#">Read/Transfer Data</a>
+                </li>
+                <li data-id="files-tab" class="material-icons-before file_upload">
+                    <a href="#">Data File Streaming</a>
+                </li>
+                <li data-id="information-tab" class="material-icons-before info">
+                    <a href="#">Information</a>
+                </li>
+                <li data-id="disclaimer-tab" class="material-icons-before error">
+                    <a href="#">Disclaimer</a>
+                </li>
+            </ul>
+        </section>
+        <section class="menu-button">
+            <button class="send" id="menuDisconnectButton" onclick="app.menuDisconnect()" data-role="none">
+                  Disconnect
+            </button>
+        </section>
+    </nav>
+    <div class="scanPage" id="scanPage" data-role="page">
+        <div class="navigation-bar">
+            <div class="navigation-bar__left">
+                <label class="back_icon_wrap" onclick="app.changeToPage('#disclaimerPage')">
+                    <i class="material-icons md-36 md-light" style="line-height: 60px;">info_outline</i>
+                </label>
+            </div>
+
+            <div class="navigation-bar__center">
+                <div class="deviceName">DSPS</div>
+                <div id="searchText" class="deviceAddress"></div>
+            </div>
+
+            <div class="navigation-bar__right">
+                <span class="connectStatus disconnected" id="reload"><span class="hide-xs">START</span> SCAN</span>
+            </div>
+        </div>
+        <div class="help-text">
+            Please press the SCAN button to search for devices.
+        </div>
+        <div id="deviceWrap">
+            <div class="itemWrap" id="deviceList">
+                <div class="item clearfix" id="deviceItem" style="position: relative; display: none;">
+                    <div class="singal">
+                        <img src="img/icon_signal_empty.png" alt="" width="40px">
+                        <div class="wrap_active">
+                            <img src="img/icon_signal_full.png" width="40px" alt="">
+                        </div>
+                        <span id="rssiValue"></span>
+                    </div>
+                    <div class="deviceInfo">
+                        <div class="deviceName">
+                            <span id="deviceName"></span>
+                        </div>
+                        <div class="deviceAddress"><span id="deviceAddress"></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mainPage" id="mainPage" data-role="page">
+        <div class="overlay" onclick="slideout.toggle()"></div>
+        <div class="navigation-bar">
+            <div class="navigation-bar__left">
+                <label class="back_icon_wrap" onclick="slideout.toggle()">
+                <i class="material-icons md-36 md-light" style="line-height: 60px;">menu</i>
+            </label>
+            </div>
+
+            <div class="navigation-bar__center">
+                <div class="deviceName">none</div>
+                <div class="deviceAddress">none</div>
+            </div>
+
+            <div class="navigation-bar__right">
+                <i class="connectStatus disconnected"></i>
+            </div>
+        </div>
+
+        <div class="tab">
+            <div class="tabContent tabContentPadding">
+                <h2 class="showConsoleMode">Receive Console Mode Data</h2>
+                <div class="btn">
+                    <div class="radioBtn">
+                        <span class="console">
+						<input type="radio" name="consoleRx" data-role="none" checked="checked"><i
+                            class="active"><span class="label">ASCII</span></i><span class="label">ASCII</span>
+                        </span>
+                        <span class="console">
+						<input type="radio" name="consoleRx" data-role="none" id="consoleRxHex"><i
+                            class=""><span class="label">HEX</span></i><span class="label">HEX</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="inputInfo">
+                    <textarea id="consoleModeData" data-role="none" readonly></textarea>
+                </div>
+                <br/>
+                <h2 class="showConsoleMode">Send Console Mode Data</h2>
+                <div class="btn">
+                    <div class="radioBtn">
+                        <span class="console">
+						<input type="radio" name="consoleTx" checked="checked" data-role="none"><i
+                            class="active"><span class="label">ASCII</span></i><span class="label">ASCII</span>
+                        </span>
+                        <span class="console">
+						<input type="radio" name="consoleTx" id="consoleTxHex" data-role="none"><i
+                            class=""><span class="label">HEX</span></i><span class="label">HEX</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="inputInfo">
+                    <textarea id="consoleMode" data-role="none"></textarea>
+                </div>
+            </div>
+            <div class="tabContent tabContentPadding selected">
+                <h2 class="showConsoleMode">Receive Console Mode Data</h2>
+                <div class="btn">
+                    <div class="radioBtn">
+                        <span class="control">
+						<input type="radio" name="rxtxRx" id="ASCII1" data-role="none"
+                               checked="checked"><i class="active"><span class="label">ASCII</span></i><span class="label">ASCII</span>
+                        </span>
+                        <span class="control">
+						<input type="radio" name="rxtxRx" id="RxHex" data-role="none"><i
+                            class=""><span class="label">HEX</span></i><span class="label">HEX</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="inputInfo">
+                    <textarea id="showData" data-role="none" readonly></textarea>
+                </div>
+                <div class="tree-btn">
+                    <button class="send" onclick="app.clearShowData()">Clear</button>
+                    <button class="send" onclick="app.onStopReceive()">Stop</button>
+                    <button class="send" onclick="app.onStartReceive()">Start</button>
+                </div>
+                <h2 class="showConsoleMode">Send Console Mode Data</h2>
+                <div class="btn">
+                    <div class="radioBtn">
+                        <span class="control">
+						                    <input type="radio" name="rxtxTx" id="ASCII2" data-role="none" checked="checked"><i class="active"><span class="label">ASCII</span></i><span class="label">ASCII</span>
+                        </span>
+                        <span class="control">
+						                    <input type="radio" name="rxtxTx" data-role="none" id="TxHex"><i class=""><span class="label">HEX</span></i><span class="label">HEX</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="inputInfo">
+                    <textarea id="WriteValue" data-role="none"></textarea>
+                </div>
+                <div class="tree-btn">
+                    <button class="send" onclick="app.onSend()">Send</button>
+                    <button class="send" onclick="app.onStop()">Stop</button>
+                </div>
+                <table class="nostyle">
+                    <tr>
+                        <th> <input disabled="" type="text" value="200" class="default" data-role="none" id="interval"></th>
+                        <td>
+                            <span class="cycleSend">Cyclic interval (ms)</span></td>
+                        <td>
+                            <input type="checkbox" name="charType" id="cycleSend" class="ios-toggle" data-role="none">
+                            <label for="cycleSend" class="checkbox-label" data-off="off" data-on="on" onclick="app.enableTextfield()"></label>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="tabContent backgroundGray">
+                <div id="fileTabList" style="display: block;">
+                    <div id="content">
+                        <ul id="fileList"></ul>
+                    </div>
+                </div>
+                <div id="fileTabConfirm" style="display: none;">
+                    <table>
+                        <tr>
+                            <th>File name</th>
+                            <td id="fileConfirmName"></td>
+                            <th>Size</th>
+                            <td id="fileConfirmSize"></td>
+                        </tr>
+                    </table>
+                    <div id="buttons">
+                        <button class="send" id="fileConfirmButton" onclick="app.fileSend()" data-role="none">Start</button>
+                        <button class="send" id="cancel2Button" onclick="app.cancelFileSend()" data-role="none">Cancel</button>
+                    </div>
+                </div>
+                <div id="fileTabProgress" class="tabContentPadding" style="display: none;">
+                    <p>Your file "<span id="fileProgressName"></span>" is being transferred, please wait until this process is completed.
+                    </p>
+                    <span id="fileProgressPercentage">0%</span>
+
+                    <progress value="0" max="100" id="fileProgressBar">
+                </progress>
+                    <button class="send" id="cancelButton" onclick="app.cancelFileSend()">Stop</button>
+                </div>
+            </div>
+            <div class="tabContent">
+                <div id="DSPSinformation">
+                    <table>
+                        <tr>
+                            <th>App version</th>
+                            <td id="appVersion"></td>
+                        </tr>
+                        <tr>
+                            <th>Support</th>
+                            <td><a href="#" onclick="openExternalURL(encodeURI('mailto:bluetooth.support@diasemi.com?subject=DSPS application question'));">bluetooth.support@diasemi.com</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="tabContent">
+                <div id="DSPSDisclaimer">
+                    <iframe src="info.html"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="disclaimerPage" id="disclaimerPage" data-role="page">
+        <div class="navigation-bar">
+            <div class="navigation-bar__left">
+                <label class="back_icon_wrap" onclick="app.changeToPage('#scanPage');">
+                    <i class="material-icons md-36 md-light" style="line-height: 60px;">arrow_back</i>
+                </label>
+            </div>
+
+            <div class="navigation-bar__center">
+                <div class="deviceName">Disclaimer</div>
+                <div class="deviceAddress"></div>
+            </div>
+
+            <div class="navigation-bar__right">
+            </div>
+        </div>
+        <div class="tab">
+            <div id="DSPSDisclaimer" style="padding-top:1em;">
+                <iframe src="info.html"></iframe>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script type="text/javascript">
+    $(".menu-section-list > li").click(function() {
+        $(".menu-section-list li").removeClass("defaultLi");
+        $(".menu-section-list li").removeClass("selectedLi");
+        $(this).addClass("selectedLi");
+        //list the files if you go to the files page
+        if ($(this).attr('data-id') === 'files-tab') {
+            app.readRootDirectory();
+            $(".navigation-bar__center>.deviceName").html("Data File Streaming");
+        } else if ($(this).attr('data-id') === "console-tab") {
+            $(".navigation-bar__center>.deviceName").html("Console");
+        } else if ($(this).attr('data-id') === "rx-tab") {
+            $(".navigation-bar__center>.deviceName").html("Read/Transfer Data");
+        } else if ($(this).attr('data-id') === "information-tab") {
+            $(".navigation-bar__center>.deviceName").html("Information");
+        } else if ($(this).attr('data-id') === "disclaimer-tab") {
+            $(".navigation-bar__center>.deviceName").html("Disclaimer");
+        }
+        slideout.close();
+        var nIndex = $(this).index();
+        $(".tab>.tabContent").removeClass("selected").eq(nIndex).addClass("selected");
+        window.scrollTo(-40, 0);
+    })
+    $(".radioBtn>.control").click(function() {
+        $(this).siblings().children("input").prop("checked", false);
+        $(this).children("input").prop("checked", true);
+        $(this).siblings().children("i").removeClass("active")
+        $(this).children("i").addClass("active");
+    })
+    $(".radioBtn>.console").click(function() {
+        $(this).siblings().children("input").prop("checked", false);
+        $(this).children("input").prop("checked", true);
+        $(this).siblings().children("i").removeClass("active")
+        $(this).children("i").addClass("active");
+    })
+    var flag = false;
+    $(".sendInterval").click(function(e) {
+        if (e.target.nodeName.toLowerCase() == "i" || e.target.className == "cycleSend") {
+            if (flag) {
+                $(this).children("input[type='checkbox']").removeAttr("checked");
+                $(this).children("i").css({
+                    "background": "url('img/check.png')",
+                    "background-size": "100% 100%"
+                });
+                $(this).children(".sendInterval").removeClass("active");
+                flag = false;
+                document.getElementById("cycleSend").checked = flag;
+            } else {
+                $(this).children("input[type='checkbox']").attr("checked", "checked");
+                $(this).children("i").css({
+                    "background": "url('img/checked.png')",
+                    "background-size": "100% 100%"
+                });
+                $(this).children(".sendInterval").addClass("active");
+                flag = true;
+                document.getElementById("cycleSend").checked = flag;
+            }
+        }
+    });
+    var oSend = document.getElementsByClassName("send");
+    for (var i = 0; i < oSend.length; i++) {
+        oSend[i].addEventListener("touchstart", function() {
+            $(this).addClass("addResponse");
+        }, false);
+        oSend[i].addEventListener("touchend", function() {
+            $(this).removeClass("addResponse");
+        }, false);
+    }
+
+    function openExternalURL(url) {
+        if (app.testPlatform().toUpperCase() === 'ANDROID') {
+            navigator.app.loadUrl(url, {
+                openExternal: true
+            });
+        } else if (app.testPlatform().toUpperCase() === 'IOS') {
+            cordova.exec(function () {}, function () {}, "ExternalUrl", "open", [url]);
+        }
+    }
+</script>

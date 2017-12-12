@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ *******************************************************************************
+ *
+ * Copyright (C) 2016 Dialog Semiconductor, unpublished work. This computer
+ * program includes Confidential, Proprietary Information and is a Trade
+ * Secret of Dialog Semiconductor. All use, disclosure, and/or reproduction
+ * is prohibited unless authorized in writing. All Rights Reserved.
+ *
+ * bluetooth.support@diasemi.com
+ *
+ *******************************************************************************
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/splash_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash_bg">
+
+    <ImageView
+        android:id="@+id/appIconS"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="85sp"
+        android:layout_above="@+id/appName"
+        android:src="@drawable/app_icon_s" />
+
+    <TextView
+        android:id="@+id/appName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="30sp"
+        android:text="@string/app_name"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/white"
+        android:textSize="60sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/white"
+        android:layout_above="@+id/poweredLogo"
+        android:layout_marginEnd="70dp"
+        android:layout_marginStart="70dp"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:id="@+id/poweredLogo"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/powered_by_dialog" />
+</RelativeLayout>

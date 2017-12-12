@@ -1,0 +1,314 @@
+.scanPage {
+    background: #FFF;
+    background-size: 100%;
+    box-sizing: border-box;
+    z-index: 1000;
+    border-top: 1px #000 solid;
+    text-shadow: none;
+    /*visibility: hidden;*/
+}
+
+.item {
+    height: 5em;
+    padding: 0.6875em 1em 2em 1em;
+    border-bottom: 1px solid rgb(224, 224, 224);
+}
+
+.singal {
+    position: relative;
+    float: right;
+    height: 3.5em;
+}
+
+.singal .wrap_active {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 1.1em;
+    overflow: hidden;
+}
+
+.singal .showActive0 {
+    width: 0px;
+    height: 40px;
+}
+
+.singal .showActive1 {
+    width: 8px;
+    height: 40px;
+}
+
+.singal .showActive2 {
+    width: 15px;
+    height: 40px;
+}
+
+.singal .showActive3 {
+    width: 23px;
+    height: 40px;
+}
+
+.singal .showActive4 {
+    width: 31px;
+    height: 40px;
+}
+
+.singal .showActive5 {
+    width: 40px;
+    height: 40px;
+}
+
+.singal .wrap_active img {
+    /* width: 0.84375em; */
+    /* height: 0.53125em; */
+}
+
+.itemWrap {
+    position: absolute;
+    width: 100%;
+}
+
+.deviceInfo {
+    /* position: absolute; */
+    /* top: 0; */
+    /* left: 0.84375em; */
+    /* margin-left: 0.625em; */
+}
+
+.deviceInfo .deviceName {
+    color: #000;
+    font-size: 1.125em;
+}
+
+.deviceInfo .deviceStatus {
+    font-size: 0.84375em;
+    color: #5d5c5c;
+    font-family: arial;
+}
+
+.deviceInfo .deviceAddress {
+    font-size: 0.84375em;
+    color: #444;
+    font-family: arial;
+}
+
+.deviceInfo .connected {
+    color: #ff9c00;
+}
+
+.item>img {
+    position: absolute;
+    right: 0;
+    top: 0.25em;
+    width: 0.5625em;
+    height: 1.03125em;
+}
+
+.cancelConnection {
+    margin-top: -0.75em;
+    width: 100%;
+    display: none;
+}
+
+.cancelConnection>img {
+    margin-top: 0em;
+    width: 0em;
+    height: 0em;
+}
+
+.search,
+.cancel {
+    position: absolute;
+    width: 100%;
+    height: 7.5em;
+    z-index: 99;
+    text-align: center;
+    display: none;
+    background-image: -webkit-linear-gradient(top, rgba(40, 40, 40, 0.5), rgba(20, 20, 20, 0.6) 25%, rgba(20, 20, 20, 0.8) 50%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+.search img {
+    margin-top: 0.1em;
+    width: 2.3125em;
+    height: 2.3125em;
+}
+
+.DSPS img {
+    margin: 1.5em auto;
+    width: 5.3125em;
+    height: 5.3125em;
+}
+
+.searchText {
+    text-align: center;
+    color: #fff;
+    margin-top: 0.5em;
+    font-size: 1em;
+}
+
+@-webkit-keyframes aperture {
+    from {
+        -webkit-transform: rotateZ(0);
+    }
+    to {
+        -webkit-transform: rotateZ(360deg);
+    }
+}
+
+
+/**
+ * appWrap
+ */
+
+.appWrap .active {
+    display: block;
+}
+
+.appWrap {
+    display: none;
+}
+
+.appWrapHeader {
+    height: 1.25em;
+    margin-top: 1em;
+    margin-left: 1.3125em;
+}
+
+.appWrapHeader img {
+    width: 0.75em;
+    height: 1.25em;
+    vertical-align: top;
+}
+
+.appWrapHeader .deviceName {
+    margin-left: 0.75em;
+    color: #ff9c00;
+}
+
+.appContainer {
+    display: none;
+    width: 80%;
+    margin: 4em auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.appItem {
+    margin-bottom: 2.125em;
+}
+
+.appItem img {
+    border-radius: 0.5em;
+    width: 3.25em;
+    height: 3.25em;
+    float: left;
+}
+
+.appItem .appInfo {
+    float: left;
+    margin-left: 0.75em;
+}
+
+.appItem .appName {
+    color: #fff;
+    font-size: 1.125em;
+}
+
+.appItem .peopleLike {
+    font-size: 0.65625em;
+    margin-top: 0.175em;
+    color: #646464;
+}
+
+.appItem .range {
+    margin-top: 0.175em;
+    width: 2.5em;
+    position: relative;
+}
+
+.appItem .defaultStar {
+    width: 2.5em;
+    height: 0.53125em;
+    position: absolute;
+    z-index: 1;
+    background: url("../img/defaultStarAll.png") no-repeat;
+    background-size: 100%;
+}
+
+.appItem .activeStar {
+    height: 0.53125em;
+    position: absolute;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.activeStar img {
+    width: 2.5em;
+    height: 0.53125em;
+}
+
+.activeStar0 {
+    width: 0;
+}
+
+.activeStar1 {
+    width: 0.5em;
+}
+
+.activeStar2 {
+    width: 1em;
+}
+
+.activeStar3 {
+    width: 1.5em;
+}
+
+.activeStar4 {
+    width: 2em;
+}
+
+.activeStar5 {
+    width: 2.5em;
+}
+
+
+/*
+ ** noDevice
+ */
+
+.noDevice {
+    display: none;
+    width: 80%;
+    margin: 6.1875em auto 0;
+    text-align: center;
+}
+
+.noDevice img {
+    width: 4.5em;
+    height: 4.5em;
+}
+
+.noDevice .noDeviceTip {
+    margin-top: 1.5625em;
+    color: #d0d0d0;
+    font-size: 1.125em;
+    text-align: center;
+}
+
+.noDevice .addOne {
+    text-align: center;
+    color: #ff9c00;
+    font-size: 0.9375em;
+    margin-top: 8.4375em;
+    text-decoration: underline;
+}
+
+span#rssiValue {
+    margin-top: -8px;
+    position: absolute;
+    left: 4px;
+    bottom: 0;
+    float: right;
+    font-size: 11px;
+}

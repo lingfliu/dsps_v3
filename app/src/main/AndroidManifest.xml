@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ *******************************************************************************
+ *
+ * Copyright (C) 2016 Dialog Semiconductor, unpublished work. This computer
+ * program includes Confidential, Proprietary Information and is a Trade
+ * Secret of Dialog Semiconductor. All use, disclosure, and/or reproduction
+ * is prohibited unless authorized in writing. All Rights Reserved.
+ *
+ * bluetooth.support@diasemi.com
+ *
+ *******************************************************************************
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dialog_semiconductor.dsps"
+    android:hardwareAccelerated="true"
+    android:windowSoftInputMode="adjustPan" >
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name" >
+        <activity
+            android:name="DSPS"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="SplashActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboard|keyboardHidden|navigation"
+            android:theme="@android:style/Theme.DeviceDefault.Light.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <uses-library
+            android:name="com.htc.android.bluetooth.le"
+            android:required="false" />
+    </application>
+
+</manifest>

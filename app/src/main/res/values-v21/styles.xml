@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Application base theme. -->
+    <style name="AppBaseTheme" parent="@android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:colorPrimary">@color/navigation_bar_background</item>
+        <item name="android:colorPrimaryDark">@color/status_bar_background</item>
+        <item name="android:navigationBarColor">@color/navigation_bar_background</item>
+    </style>
+
+</resources>

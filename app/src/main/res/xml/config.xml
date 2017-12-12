@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget id="com.dialog_semiconductor.dsps" version="3.210.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="Whitelist">
+        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="BCBluetooth">
+        <param name="android-package" value="org.bcsphere.bluetooth.BCBluetooth" />
+    </feature>
+    <feature name="File">
+        <param name="android-package" value="org.apache.cordova.file.FileUtils" />
+        <param name="onload" value="true" />
+    </feature>
+    <allow-navigation href="cdvfile:*" />
+    <feature name="Notification">
+        <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
+    </feature>
+    <feature name="BCUtility">
+        <param name="android-package" value="org.bcsphere.utilities.BCUtility" />
+    </feature>
+    <feature name="AppInfo">
+        <param name="android-package" value="com.diasemi.cordova.appinfo.AppInfo" />
+    </feature>
+    <name>DSPS</name>
+    <description>
+        Dialog Semiconductor DSPS host application.
+    </description>
+    <author email="bluetooth.support@diasemi.com" href="http://www.dialog-semiconductor.com/">
+        Dialog Semiconductor
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <allow-intent href="market:*" />
+    <preference name="loglevel" value="ERROR" />
+    <preference name="AndroidPersistentFileLocation" value="Compatibility" />
+</widget>

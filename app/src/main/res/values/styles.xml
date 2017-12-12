@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Application base theme. -->
+    <style name="AppBaseTheme" parent="@android:style/Theme.DeviceDefault.Light.NoActionBar">
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="@style/AppBaseTheme">
+    </style>
+
+</resources>
